@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./test copy.css">
+</head>
+
+
+<script>
+$(function(){
+    $('.i').click(function(){
+        $('.i').css({display:none})
+    })
+})
+    $(function () {
+        $('.ham').click(function () {
+            $('.on').slideToggle()
+        })
+    })
+    setInterval(function () {
+        slide_img()
+        slidebottom()
+    }, 5000)
+    setInterval(function (){
+        slidemiddle()
+    },3000)
+    function slide_img() {
+        let w = $('.slide > ul >li').width()
+        let nth = $('.slide > ul >li').index()
+        $('.slide>ul').animate({
+            marginLeft: -w
+        }, 700, function () {
+            $('.slide > ul> li').eq(0).appendTo('.slide>ul')
+            $('.slide > ul').css({
+                marginLeft: 0
+            })
+            $('.dot_con span').eq(-1).prependTo('.dot_con')
+        })
+    }
+    function slidemiddle(){
+        let ww = $('.list2>li').width()
+        $('.list2').animate({marginLeft:-ww},700,function(){
+            $('.list2>li').eq(0).appendTo('.list2')
+            $('.list2').css({marginLeft:0})
+        })
+    }
+
+    function slidebottom() {
+        let www = $('.list3>li').width()
+        $('.list3').animate({
+            marginLeft: -www
+        }, 700, function () {
+            $('.list3>li').eq(0).appendTo('.list3')
+            $('.list3').css({
+                marginLeft: 0
+            })
+        })
+    }
+</script>
+
+
+<body>
+    <header class="hd">
+        <div class="top">
+            <h1>첫 구매 15% 할인 웰검 쿠폰 상시 증정!</h1>
+            <a href="#"><i class="fa-regular fa-xmark"></i></a>
+        </div>
+        <div class="nav_top">
+
+            <div class="ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="on">
+                <ul class="gnb">
+                    <li>
+                        <a href="#">추천메뉴</a>
+                    </li>
+                    <li>
+                        <a href="#">모든제품</a>
+                    </li>
+                    <li>
+                        <a href="#">멤버십</a>
+                    </li>
+                    <li>
+                        <a href="#">브랜드</a>
+                    </li>
+                    <li>
+                        <a href="#">외식사업고객용[B2B]</a>
+                    </li>
+                    <li>
+                        <a href="#">공지사항</a>
+                    </li>
+                </ul>
+            </nav>
+            <h2><img src="./img/top_logo.png" alt="로고"></h2>
+
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+        </div>
+    </header>
+    <div class="bt_nav">
+        <ul class="list4">
+            <li>
+                <a href="#">
+                    <img src="./img/btn_bottom_home.png" alt="">
+                    <p>홈</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <img src="./img/btn_bottom_all.png" alt="">
+                    <p>모든제품</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <img src="./img/btn_bottom_basket.png" alt="">
+                    <p>장바구니</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <img src="./img/btn_bottom_my.png" alt="">
+                    <p>마이페이지</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="sec1">
+        <div class="slide">
+            <ul>
+                <li>
+                    <img src="./img/main1.jpg" alt="1">
+                </li>
+                <li>
+                    <img src="./img/main2.jpg" alt="2">
+                </li>
+                <li>
+                    <img src="./img/main3.jpg" alt="3">
+                </li>
+                <li>
+                    <img src="./img/main4.jpg" alt="4">
+                </li>
+            </ul>
+        </div>
+        <div class="dot_con">
+            <span class="on"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </section>
+    <section class="sec1_5">
+        <p>하겐다즈 아이스크림의 특징은 안정제가 들어가지 않고 양질의 유지방을 듬뿍 넣어 약간 기름기가 돌면서 맛이 진한 고급 아이스크림이라는 점이다. 안정제가 들어가지 않으면 좀 더 빨리 녹지만 식감은
+            훨씬 좋아진다. </p>
+    </section>
+    <section class="sec2">
+        <h3>New Menu</h3>
+        <ul class="list">
+            <li>
+                <a href="#"><img src="./img2/no1.jpg" alt="ics" class="sec2_1"></a>
+                <button class="sec2_btn">자세히 보기</button>
+            </li>
+            <li>
+                <a href="#"><img src="./img2/no2.jpg" alt="ics" class="sec2_1"></a>
+                <button class="sec2_btn">자세히 보기</button>
+            </li>
+
+        </ul>
+    </section>
+    <section class="sec3">
+        <h4>추천제품</h4>
+        <ul class="list2">
+            <li>
+                <img src="./img/트위스트&딸기&벨지안초코릿.jpg" alt="">
+                <span>사랑하는 사람들과 함께 즐기는 파인트입니다.</span>
+            </li>
+            <li>
+                <img src="./img/minicup.png" alt="">
+                <span>소중한 나에게 선사하는 달달함 미니컵입니다.</span>
+            </li>
+            <li>
+                    <img src="./img/bar.png" alt="">
+                    <span>달콤 바삭한 초콜릿 코팅의 스틱바입니다.</span>
+            </li>
+            <li>
+                    <img src="./img/quarter.jpg" alt="">
+                    <span>모두와 함께 즐기기 좋은 아이스크림입니다.</span>
+            </li>
+            <li>
+                    <img src="./img/c&d.png" alt="">
+                    <span>생일,행사,파티,모임등 어디서든 즐겨보세요.</span>
+            </li>
+            <li>
+                    <img src="./img/gz.png" alt="">
+                    <span>하겐다즈만의 특별한 아이템 입니다.</span>
+            </li>
+        </ul>
+    </section>
+    <section class="sec4">
+        <ul class="list3">
+            <li>
+                <a href="#">
+                    <img src="./img/event_1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img/event_2.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img/event_3.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+        <ul class="list3_1">
+            <a href="#">+</a>
+            <p>하겐다즈 브랜드 스토리</p>
+        </ul>
+    </section>
+    <section class="ft">
+        <div class="ft_menu">
+            <ul class="menu1">
+                <li>
+                    <a href="#">
+                        <strong>공지사항</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <strong>이벤트</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <strong>매장안내</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <strong>고객센터</strong>
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu2">
+                <li>
+                    <a href="#">
+                        <strong>개인정보처리방침</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <strong>이용약관</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <strong>이메일무단수집거부</strong>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <h5><img src="./img/foot_logo.png" alt=""></h5>
+            <p>하겐다즈몰른 주식회사 에스와이피글로벌에서<br>판매운영대행을 하고 있습니다.</p>
+            <div class="ft1">
+                <p>한국라겐-다즈(주)대표: 김미조</p>
+                <span>주소: 서울특별시 강남구 테헤란로 331 (역삼동, 아남타워 6층)</span><br>
+                <span>사업자등록번호:106-81-28964 ㅣ 통신판매신고: 강남-8186</span><br>
+                <span>대표전화: 02-508-8500 ㅣ 개인정보관리책임자: 김미조 대표</span>
+            </div>
+            <div class="ft2">
+                <p>주식회사 에스와이피글로벌 대표:김광용(사업자정보확인)</p>
+                <span>주소:서울특별시 강남구 봉은사로112길26,5층502호(삼성동,한보빌딩)</span><br>
+                <span>사업자등록번호:262-88-00829</span><br>
+                <span>통신판매신고:2018-서울강남-00403 ㅣ 대표전화:070-7549-7020</span>be
+                <span>Email:cs@unitoa.com ㅣ 개인정보관리책임자:조현정</span>
+            </div>
+            <div class="ft3">
+                <p>하겐다즈 고객만족센터</p>
+                <strong>070-7549-7020</strong><br>
+                <span>* 고객센터 운영 시간 : 평일 10:00 ~ 17:00</span><br>
+                <span>(점심시간 12:00~13:00)</span>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
